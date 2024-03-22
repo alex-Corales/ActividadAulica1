@@ -1,23 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Logica;
 
-import java.util.Collections;
 import java.util.HashSet;
 
-/**
- *
- * @author 54265
- */
 public class Baraja {
 
-    private HashSet<Carta>cartas=new HashSet<>(); // este
+    private HashSet<Carta> cartas; // este
 
-    public void barajar(HashSet cartas){
-        Collections.shuffle(cartas);
+    public Baraja(){
+        cartas = new HashSet<>();
+        initBaraja();
+    }
+    
+    private void initBaraja() {
+        String[] palos = {"Espadas", "Bastos", "Oros", "Copas"};
+
+        for (String palo : palos) {
+            for (int numero = 1; numero <= 12; numero++) {
+                if (numero != 8 && numero != 9) {
+                    cartas.add(new Carta(palo, numero));
+                }
+            }
+        }
+    }
+    
+    /* 
+        Al ser un HashSet no es necesario barajar la carta 
+        por que cuando agrego una carta se guarda de acuerdo a 
+        su ubicacion en la tabla hash, o sea no tiene un orden como 
+        un arrayList.
+        Lo malo es que siempre va a estar ordenado de la misma manera, 
+        por que el hash siempre es el mismo para cada carta.
+    */    
+    public void barajar(){
+        //Collections.shuffle(cartas);
     }
 
     public void siguienteCarta(){
