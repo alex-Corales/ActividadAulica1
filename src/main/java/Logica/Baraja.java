@@ -37,7 +37,10 @@ public class Baraja {
             return null;
         }
         else{
-            return cartas.get(cartas.lastIndexOf(cartas));
+           // return cartas.get(cartas.size(cartas));
+            Carta carta = cartas.remove(cartas.size()-1);
+            monton.add(carta);
+            return carta;
         }
     }
 
@@ -45,15 +48,15 @@ public class Baraja {
         if (cartas.isEmpty()) {
             return 0;
         }
-        else return cartas.lastIndexOf(cartas);
+        else return cartas.size();
     }
 
     public void darCartas(int cantidad){
-        if(cantidad > cartas.size()) System.out.println("No hay cartas");
+        if(cantidad > cartas.size()) System.out.println("No hay cartas suficientes");
         else{
             for (int i = 0; i < cantidad; i++) {
-                monton.add(cartas.get(cartas.lastIndexOf(cartas)));
-                System.out.println("Se elimino esta carta: "+ cartas.remove(cartas.lastIndexOf(cartas)));
+                monton.add(cartas.get(cartas.size()-1));
+                System.out.println("Se elimino esta carta: "+ cartas.remove(cartas.size()-1));
             }
         }
         
