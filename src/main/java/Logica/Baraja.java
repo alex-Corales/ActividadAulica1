@@ -1,6 +1,7 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 
 public class Baraja {
@@ -27,15 +28,24 @@ public class Baraja {
     }
   
     public void barajar(){
-        //Collections.shuffle(cartas);
+        Collections.shuffle(cartas);
     }
 
-    public void siguienteCarta(){
-
+    public Carta siguienteCarta(){
+        if (cartas.isEmpty()) {
+            System.out.println("No hay mas cartas en la baraja");
+            return null;
+        }
+        else{
+            return cartas.get(cartas.lastIndexOf(cartas));
+        }
     }
 
-    public void cartasDisponibles(){
-
+    public int cartasDisponibles(){
+        if (cartas.isEmpty()) {
+            return 0;
+        }
+        else return cartas.lastIndexOf(cartas);
     }
 
     public void darCartas(int cantidad){
