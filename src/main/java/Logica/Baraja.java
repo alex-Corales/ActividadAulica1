@@ -49,14 +49,21 @@ public class Baraja {
     }
 
     public void darCartas(int cantidad){
-
+        if(cantidad > cartas.size()) System.out.println("No hay cartas");
+        else{
+            for (int i = 0; i < cantidad; i++) {
+                monton.add(cartas.get(cartas.lastIndexOf(cartas)));
+                System.out.println("Se elimino esta carta: "+ cartas.remove(cartas.lastIndexOf(cartas)));
+            }
+        }
+        
     }
 
     public void cartasMonton(){
         for (Carta carta : monton) {
             System.out.println(carta);
         }
-
+        
     }
 
     public void mostrarBaraja(){
