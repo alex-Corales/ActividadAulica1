@@ -63,8 +63,12 @@ public class Baraja {
     }
 
     public void cartasMonton(){
-        for (Carta carta : monton) {
+        if(cartas.size()>0){
+            for (Carta carta : monton) {
             System.out.println(carta);
+            }
+        }else{
+            System.out.println("No hay ninguna carta en el monton");
         }
         
     }
