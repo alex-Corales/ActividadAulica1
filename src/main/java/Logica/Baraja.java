@@ -4,10 +4,10 @@ import java.util.HashSet;
 
 public class Baraja {
 
-    private HashSet<Carta> cartas; // este
+    private ArrayList<Carta> cartas; // este
 
     public Baraja(){
-        cartas = new HashSet<>();
+        cartas = new ArrayList<>();
         initBaraja();
     }
     
@@ -22,15 +22,7 @@ public class Baraja {
             }
         }
     }
-    
-    /* 
-        Al ser un HashSet no es necesario barajar la carta 
-        por que cuando agrego una carta se guarda de acuerdo a 
-        su ubicacion en la tabla hash, o sea no tiene un orden como 
-        un arrayList.
-        Lo malo es que siempre va a estar ordenado de la misma manera, 
-        por que el hash siempre es el mismo para cada carta.
-    */    
+  
     public void barajar(){
         //Collections.shuffle(cartas);
     }
